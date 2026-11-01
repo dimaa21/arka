@@ -1,4 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="ARKA">
-  <rect width="32" height="32" fill="#111"/>
-  <text x="16" y="21" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#fff">AR</text>
+  <rect width="32" height="32" rx="7" fill="#111111"/>
+  <path
+    fill="#ffffff"
+    fill-rule="evenodd"
+    d="M16 5.2 27.2 27h-5.1l-2.1-5.4H12l-2.1 5.4H4.8L16 5.2Zm0 8.2 2.15 5.5h-4.3L16 13.4Z"
+  />
 </svg>
