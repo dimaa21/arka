@@ -11,7 +11,7 @@ npm install
 npm run dev
 ```
 
-Відкрийте `http://127.0.0.1:5173/canvas-slot-machine/`.
+Відкрийте `http://127.0.0.1:5173/arka/`.
 
 ```bash
 npm test
