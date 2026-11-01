@@ -1,95 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#070910" />
-    <meta
-      name="description"
-      content="Lumina Reels is a demo slot machine drawn on HTML Canvas. Virtual credits only — no real money."
-    />
-    <title>Lumina Reels — demo slot</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0e0e0e" />
+    <meta name="description" content="Каталог взуття ARKA: фільтри, розміри і ціни в гривнях." />
+    <title>ARKA — взуття</title>
     <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,560;9..144,650&family=Outfit:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="page">
-      <main class="machine">
-        <header class="top">
-          <div>
-            <p class="eyebrow">Demo game, virtual credits only</p>
-            <h1>Lumina Reels</h1>
-          </div>
-          <button id="paytable-btn" class="ghost" type="button">Paytable</button>
-        </header>
-
-        <div id="stage" class="stage">
-          <canvas id="reels" width="960" height="600" aria-label="Slot machine reels">
-            A canvas slot machine. Spin the reels to play with virtual credits.
-          </canvas>
-        </div>
-
-        <section class="stats" aria-label="Credits">
-          <div class="stat">
-            <span>Balance</span>
-            <strong id="balance">1,000</strong>
-          </div>
-          <div class="stat">
-            <span>Bet</span>
-            <strong id="bet">10</strong>
-            <small id="stake">1 line · costs 10</small>
-          </div>
-          <div class="stat">
-            <span>Win</span>
-            <strong id="win">0</strong>
-          </div>
-        </section>
-
-        <p id="message" class="message" role="status"></p>
-
-        <div class="controls">
-          <div class="stepper" role="group" aria-label="Change bet">
-            <button id="bet-down" type="button" aria-label="Decrease bet">−</button>
-            <button id="bet-up" type="button" aria-label="Increase bet">+</button>
-          </div>
-          <button id="max-bet" class="ghost" type="button">Max bet</button>
-          <button id="spin" class="spin" type="button">Spin</button>
-          <button id="auto" class="ghost" type="button">Auto</button>
-          <button id="mute" class="ghost" type="button" aria-pressed="false">Sound on</button>
-        </div>
-
-        <div class="secondary">
-          <div class="lines" role="group" aria-label="Paylines">
-            <button id="lines-1" type="button" aria-pressed="true">1 line</button>
-            <button id="lines-5" type="button" aria-pressed="false">5 lines</button>
-          </div>
-          <button id="reset" class="text" type="button">Reset balance</button>
-          <p class="hint">Press Space to spin</p>
-        </div>
-
-        <p class="fineprint">
-          Demo game, virtual credits only. Nothing here can be exchanged for money.
-        </p>
-      </main>
-    </div>
-
-    <p id="live" class="sr-only" aria-live="polite"></p>
-
-    <dialog id="paytable">
-      <form method="dialog" class="sheet">
-        <div class="dialog-head">
-          <h2>Paytable</h2>
-          <button class="icon" type="submit" value="close" aria-label="Close paytable">×</button>
-        </div>
-        <div id="paytable-body"></div>
-      </form>
-    </dialog>
-
-    <script type="module" src="/src/main.ts"></script>
+    <div id="app"></div>
+    <script type="module" src="/src/pages/home.ts"></script>
   </body>
 </html>
