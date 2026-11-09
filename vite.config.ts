@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitest/config';
 
-/** GitHub Pages serves this repository under its current folder name. */
+/** GitHub Pages serves this repository at /arka/. */
 export default defineConfig({
-  base: '/canvas-slot-machine/',
+  base: '/arka/',
   appType: 'mpa',
   build: {
     target: 'es2022',
