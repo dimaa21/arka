@@ -1,5 +1,4 @@
-import { colorHex, formatMoney, type Product } from './catalog';
-import { shoeMarkup } from './shoe';
+import { formatMoney, imageUrl, type Product } from './catalog';
 import { isWished, toggleWish } from './store';
 import { siteUrl } from './url';
 
@@ -15,7 +14,7 @@ export function productCard(product: Product): string {
   return `<article class="card">
     <a class="photo" href="${siteUrl(`product/?id=${product.id}`)}">
       ${badge}
-      ${shoeMarkup(product.variant, colorHex(product.color))}
+      <img src="${imageUrl(product, 480)}" alt="${product.brand} ${product.title}" loading="lazy" decoding="async" />
     </a>
     <button class="wish${wished}" type="button" data-wish="${product.id}" aria-label="Зберегти ${product.brand} ${product.title}" aria-pressed="${wished ? 'true' : 'false'}">${wished ? '♥' : '♡'}</button>
     <p class="brand">${product.brand}</p>

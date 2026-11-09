@@ -81,7 +81,7 @@ function footer(): string {
         <a href="${siteUrl('saved/')}">Збережене</a>
       </div>
     </div>
-    <p class="legal">© ${new Date().getFullYear()} ARKA. Усі моделі намальовані для цього магазину.</p>
+    <p class="legal">© ${new Date().getFullYear()} ARKA. Фото: Wikimedia Commons, права належать авторам. Торгові марки належать їхнім власникам.</p>
   </footer>`;
 }
 

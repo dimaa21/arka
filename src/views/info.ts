@@ -7,8 +7,8 @@ function fieldText(value: FormDataEntryValue | null): string {
 const PAGES: Record<string, { title: string; html: string }> = {
   about: {
     title: 'Магазин',
-    html: `<p>ARKA — вітрина взуття з Івано-Франківська. Тут вісім власних ліній, ціни в гривнях і доставка по Україні.</p>
-      <p>Моделі намальовані для сайту. Це не вітрина чужих торгових марок.</p>`,
+    html: `<p>ARKA — вітрина взуття з Івано-Франківська. Тут взуття Nike, Adidas, New Balance, Jordan, ASICS, Converse, Puma, Dr. Martens і Timberland, ціни в гривнях і доставка по Україні.</p>
+      <p>Фотографії взято з Wikimedia Commons, права на них належать авторам. Назви брендів — торгові марки їхніх власників; ARKA не є офіційним партнером цих компаній.</p>`,
   },
   delivery: {
     title: 'Доставка і оплата',

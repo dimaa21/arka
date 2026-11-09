@@ -1,17 +1,17 @@
 # ARKA
 
-Магазин взуття на кількох сторінках. Головна — каталог із фільтрами. Розділи для жінок, чоловіків, дітей, спорту і брендів — окремі вітрини.
+A multi-page footwear store. The home page is a catalog with filters. The women, men, kids, sport and brands sections are separate storefronts.
 
-Моделі намальовані для цього сайту. Чужих торгових марок і їхніх фотографій тут немає.
+The catalog features sneakers, slides and boots from Nike, Adidas, New Balance, Jordan, ASICS, Converse, Puma, Dr. Martens and Timberland. Product photos are loaded from Wikimedia Commons and remain the property of their authors under their respective licenses. All brand names are trademarks of their owners; this is a demo project and is not affiliated with any of them.
 
-## Запуск
+## Getting started
 
 ```bash
 npm install
 npm run dev
 ```
 
-Відкрийте `http://127.0.0.1:5173/arka/`.
+Open `http://127.0.0.1:5173/arka/`.
 
 ```bash
 npm test

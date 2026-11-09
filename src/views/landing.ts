@@ -1,6 +1,5 @@
 import { bindCards, productCard } from '../cards';
-import { BRANDS, EMPTY_FILTERS, matchProducts, PRODUCTS, colorHex } from '../catalog';
-import { shoeMarkup } from '../shoe';
+import { BRANDS, EMPTY_FILTERS, imageUrl, matchProducts, PRODUCTS } from '../catalog';
 import { siteUrl } from '../url';
 
 interface LandingCopy {
@@ -42,8 +41,8 @@ const COPY: Record<string, LandingCopy> = {
   },
   brands: {
     kicker: 'Бренди',
-    title: 'Вісім ліній одного магазину',
-    text: 'VELA, NORD, KITE, MIRA, SABLE, LUMEN, FELD і ORI. Окремі силуети, одна доставка.',
+    title: 'Світові бренди в одному магазині',
+    text: 'Nike, Adidas, New Balance, Jordan, ASICS, Converse, Puma, Dr. Martens і Timberland. Одна доставка.',
     gender: '',
     category: '',
   },
@@ -69,7 +68,7 @@ export function renderLanding(main: HTMLElement, key: string): void {
           <p>${copy.text}</p>
           <a class="btn" href="${allHref}">Дивитись пари</a>
         </div>
-        <div class="hero-art" aria-hidden="true">${picks[0] ? shoeMarkup(picks[0].variant, colorHex(picks[0].color)) : ''}</div>
+        <div class="hero-art" aria-hidden="true">${picks[0] ? `<img src="${imageUrl(picks[0], 900)}" alt="" decoding="async" />` : ''}</div>
       </div>
     </section>
     <section class="wrap promos" aria-label="Добірки">
@@ -79,8 +78,8 @@ export function renderLanding(main: HTMLElement, key: string): void {
       ${promo('Класика міста', 'Білі та чорні пари без шуму', 'green')}
     </section>
     <section class="wrap brands-row" aria-label="Лінії">
-      <h2>Наші лінії</h2>
-      <div>${BRANDS.map((brand) => `<a href="${siteUrl(`?brand=${brand}`)}">${brand}</a>`).join('')}</div>
+      <h2>Наші бренди</h2>
+      <div>${BRANDS.map((brand) => `<a href="${siteUrl(`?brand=${encodeURIComponent(brand)}`)}">${brand}</a>`).join('')}</div>
     </section>
     <section class="wrap">
       <h2>Оберіть свій розділ</h2>

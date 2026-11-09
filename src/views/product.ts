@@ -1,6 +1,5 @@
 import { bindCards, productCard } from '../cards';
-import { colorHex, formatMoney, PRODUCTS, productById } from '../catalog';
-import { shoeMarkup } from '../shoe';
+import { formatMoney, imageUrl, PRODUCTS, productById } from '../catalog';
 import { addToCart } from '../store';
 import { siteUrl } from '../url';
 
@@ -16,7 +15,7 @@ export function renderProduct(main: HTMLElement): void {
   ).slice(0, 4);
   main.innerHTML = `
     <article class="wrap product">
-      <div class="photo photo-lg">${shoeMarkup(product.variant, colorHex(product.color))}</div>
+      <div class="photo photo-lg"><img src="${imageUrl(product, 900)}" alt="${product.brand} ${product.title}" decoding="async" /></div>
       <div>
         <p class="kicker">${product.brand}</p>
         <h1>${product.brand} ${product.title}</h1>

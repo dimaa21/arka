@@ -9,11 +9,11 @@ describe('matchProducts', () => {
   it('filters by price, color, and a text query', () => {
     const found = matchProducts(PRODUCTS, {
       ...EMPTY_FILTERS,
-      q: 'court',
+      q: 'air force',
       color: 'white',
-      max: 3000,
+      max: 6000,
     });
-    expect(found.map((product) => product.id)).toEqual(['vela-court']);
+    expect(found.map((product) => product.id)).toEqual(['nike-air-force-1']);
   });
 
   it('includes unisex pairs in the women and men selections', () => {
@@ -34,8 +34,8 @@ describe('matchProducts', () => {
 
 describe('parseFilters', () => {
   it('reads the query string and ignores an unknown sort', () => {
-    const filters = parseFilters(new URLSearchParams('q=vela&sort=nope&page=2&max=4000'));
-    expect(filters.q).toBe('vela');
+    const filters = parseFilters(new URLSearchParams('q=nike&sort=nope&page=2&max=4000'));
+    expect(filters.q).toBe('nike');
     expect(filters.sort).toBe('popular');
     expect(filters.page).toBe(2);
     expect(filters.max).toBe(4000);
