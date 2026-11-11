@@ -1,3 +1,4 @@
+import { sendMessage } from '../api';
 import { siteUrl } from '../url';
 
 function fieldText(value: FormDataEntryValue | null): string {
@@ -51,7 +52,13 @@ export function renderInfo(main: HTMLElement, key: string): void {
       if (note) note.textContent = 'Заповніть ім’я, адресу і текст.';
       return;
     }
-    form.reset();
-    if (note) note.textContent = 'Дякуємо. Це демонстраційна форма, лист нікуди не відправляється.';
+    void sendMessage({ name, email, message }).then((saved) => {
+      form.reset();
+      if (note) {
+        note.textContent = saved
+          ? 'Повідомлення збережено. Відповімо на цю адресу.'
+          : 'Сервер магазину недоступний, повідомлення не збережено.';
+      }
+    });
   });
 }

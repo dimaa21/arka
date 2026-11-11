@@ -9,7 +9,7 @@ import {
   pageOf,
   parseFilters,
   PRICE_CEILING,
-  PRODUCTS,
+  products,
   type Filters,
   type SortId,
 } from '../catalog';
@@ -23,7 +23,7 @@ export function renderShop(main: HTMLElement): void {
   bindCards(main);
 
   const draw = (): void => {
-    const matched = matchProducts(PRODUCTS, filters);
+    const matched = matchProducts(products(), filters);
     const pages = pageCount(matched.length);
     if (filters.page > pages) filters = { ...filters, page: pages };
     const visible = pageOf(matched, filters.page);

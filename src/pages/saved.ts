@@ -1,5 +1,5 @@
 import '../style.css';
-import { boot } from '../chrome';
+import { start } from '../start';
 import { renderSaved } from '../views/saved';
 
-renderSaved(boot());
+start(renderSaved);

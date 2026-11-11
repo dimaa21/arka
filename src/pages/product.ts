@@ -1,5 +1,5 @@
 import '../style.css';
-import { boot } from '../chrome';
+import { start } from '../start';
 import { renderProduct } from '../views/product';
 
-renderProduct(boot());
+start(renderProduct);

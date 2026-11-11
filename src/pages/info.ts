@@ -1,5 +1,7 @@
 import '../style.css';
-import { boot } from '../chrome';
+import { start } from '../start';
 import { renderInfo } from '../views/info';
 
-renderInfo(boot(), document.body.dataset.info ?? 'about');
+start((main) => {
+  renderInfo(main, document.body.dataset.info ?? 'about');
+});

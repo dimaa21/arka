@@ -1,5 +1,6 @@
+import { sendMessage } from '../api';
 import { bindCards, productCard } from '../cards';
-import { BRANDS, EMPTY_FILTERS, imageUrl, matchProducts, PRODUCTS } from '../catalog';
+import { BRANDS, EMPTY_FILTERS, imageUrl, matchProducts, products } from '../catalog';
 import { siteUrl } from '../url';
 
 interface LandingCopy {
@@ -52,7 +53,7 @@ const COPY: Record<string, LandingCopy> = {
 export function renderLanding(main: HTMLElement, key: string): void {
   const copy = COPY[key] ?? COPY.brands;
   if (!copy) return;
-  const picks = matchProducts(PRODUCTS, {
+  const picks = matchProducts(products(), {
     ...EMPTY_FILTERS,
     gender: copy.gender,
     category: copy.category,
@@ -130,9 +131,20 @@ export function renderLanding(main: HTMLElement, key: string): void {
       if (note) note.textContent = 'Вкажіть адресу з @.';
       return;
     }
-    localStorage.setItem('arka.news', email.trim());
-    form.reset();
-    if (note) note.textContent = 'Записали. Напишемо, коли вийде нова пара.';
+    const address = email.trim();
+    localStorage.setItem('arka.news', address);
+    void sendMessage({
+      name: 'Розсилка',
+      email: address,
+      message: 'Хочу лист про нові пари.',
+    }).then((saved) => {
+      form.reset();
+      if (note) {
+        note.textContent = saved
+          ? 'Записали. Напишемо, коли вийде нова пара.'
+          : 'Адресу збережено в браузері. Сервер магазину зараз недоступний.';
+      }
+    });
   });
 }
 

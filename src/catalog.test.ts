@@ -13,7 +13,10 @@ describe('matchProducts', () => {
       color: 'white',
       max: 6000,
     });
-    expect(found.map((product) => product.id)).toEqual(['nike-air-force-1']);
+    expect(found.map((product) => product.id)).toEqual([
+      'nike-air-force-1',
+      'nike-air-force-1-kids',
+    ]);
   });
 
   it('includes unisex pairs in the women and men selections', () => {
@@ -27,8 +30,9 @@ describe('matchProducts', () => {
     const sorted = matchProducts(PRODUCTS, { ...EMPTY_FILTERS, sort: 'price-asc' });
     expect(sorted[0]?.price).toBeLessThanOrEqual(sorted[1]?.price ?? 0);
     expect(pageOf(sorted, 1)).toHaveLength(9);
-    expect(pageCount(sorted.length)).toBe(2);
-    expect(pageOf(sorted, 2)).toHaveLength(sorted.length - 9);
+    expect(pageCount(sorted.length)).toBe(Math.ceil(sorted.length / 9));
+    expect(pageOf(sorted, 2)).toHaveLength(Math.min(9, sorted.length - 9));
+    expect(PRODUCTS.length).toBeGreaterThan(30);
   });
 });
 

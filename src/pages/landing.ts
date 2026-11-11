@@ -1,5 +1,7 @@
 import '../style.css';
-import { boot } from '../chrome';
+import { start } from '../start';
 import { renderLanding } from '../views/landing';
 
-renderLanding(boot(), document.body.dataset.landing ?? 'brands');
+start((main) => {
+  renderLanding(main, document.body.dataset.landing ?? 'brands');
+});

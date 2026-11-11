@@ -130,6 +130,7 @@ svg {
 .newsletter input,
 .stack-form input,
 .stack-form textarea,
+.stack-form select,
 .lines input {
   border: 0;
   background: #fff;
@@ -137,6 +138,15 @@ svg {
   border-radius: 999px;
   min-height: 38px;
   padding: 0 14px;
+}
+.stack-form input,
+.stack-form textarea,
+.stack-form select {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+.stack-form select {
+  width: 100%;
 }
 .search input {
   width: min(220px, 28vw);
@@ -617,6 +627,13 @@ h1 {
 .total {
   font-size: 1.3rem;
   font-weight: 800;
+}
+.checkout {
+  max-width: 460px;
+  margin-top: 8px;
+}
+.order-done {
+  max-width: 560px;
 }
 
 .site-footer {

@@ -1,5 +1,5 @@
 import { bindCards, productCard } from '../cards';
-import { formatMoney, imageUrl, PRODUCTS, productById } from '../catalog';
+import { formatMoney, imageUrl, productById, products } from '../catalog';
 import { addToCart } from '../store';
 import { siteUrl } from '../url';
 
@@ -10,16 +10,16 @@ export function renderProduct(main: HTMLElement): void {
     main.innerHTML = `<section class="wrap page-copy"><h1>Пару не знайдено</h1><a class="btn" href="${siteUrl()}">До каталогу</a></section>`;
     return;
   }
-  const related = PRODUCTS.filter(
-    (item) => item.id !== product.id && item.category === product.category,
-  ).slice(0, 4);
+  const related = products()
+    .filter((item) => item.id !== product.id && item.category === product.category)
+    .slice(0, 4);
   main.innerHTML = `
     <article class="wrap product">
       <div class="photo photo-lg"><img src="${imageUrl(product, 900)}" alt="${product.brand} ${product.title}" decoding="async" /></div>
       <div>
         <p class="kicker">${product.brand}</p>
         <h1>${product.brand} ${product.title}</h1>
-        <p class="price price-lg">${formatMoney(product.price)}</p>
+        <p class="price price-lg">${product.compareAt ? `<s>${formatMoney(product.compareAt)}</s> ` : ''}${formatMoney(product.price)}</p>
         <p>${product.blurb}</p>
         <p>${product.stock ? 'В наявності' : 'Немає в наявності'}</p>
         <form data-buy>

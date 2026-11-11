@@ -1,4 +1,4 @@
-import { PRODUCTS, productById, type Product } from './catalog';
+import { productById, products, type Product } from './catalog';
 
 const CART_KEY = 'arka.cart';
 const WISH_KEY = 'arka.wish';
@@ -101,5 +101,5 @@ export function clearCart(): void {
 
 export function wishedProducts(): Product[] {
   const ids = new Set(wishIds());
-  return PRODUCTS.filter((product) => ids.has(product.id));
+  return products().filter((product) => ids.has(product.id));
 }

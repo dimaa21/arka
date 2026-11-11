@@ -1,5 +1,5 @@
 import '../style.css';
-import { boot } from '../chrome';
+import { start } from '../start';
 import { renderShop } from '../views/shop';
 
-renderShop(boot());
+start(renderShop);
